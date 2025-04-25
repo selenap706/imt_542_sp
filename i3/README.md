@@ -7,12 +7,13 @@ This program takes a dataset of books from Goodreads with the various aspects li
 The repo has a jupyter notebook "imt542_i3.ipynb" that can be opened in Google Colab. Google Colab is linked to the notebook file in this repo, but the file itself can be downloaded or copied into Google Colab. Once Google Colab has the code, also download the dataset "goodreads_top100_from1980to2023_final.csv" in the i3 folder of this repo. This csv file must be manually uploaded into the code using the second cell. 
 
 ## Running Instructions
-The first code block downloads/imports all the necessary modules and commands for the program. Then the csv dataset must be manually uploaded. Afterwards, the code can be executed as is to visualize the data in a bar graph form or a word cloud. The years analyzed can be changed in this section of the code
+The first code block downloads/imports all the necessary modules and commands for the program. Then the csv dataset must be manually uploaded. Afterwards, the code can be executed as is to visualize the data in a bar graph form or a word cloud. The years analyzed can be changed in the following section of the code by replacing "2000" with the desired year.
 
 ```
 # Join together a year's worth of book genres into one string, cleaning it up so it's just words and spaces
 # Rename genre_text_2000 to match the year/years chosen to analyze # One issue I couldn't figure out how to resolve - if a genre tag is more than one word, it gets split up and can't be linked together
 # Like "Young Adult" becomes "Young" and "Adult" in the eyes of the code
+
 genre_text_2000 = " ".join(dfs_by_year[2000]['genres'])
 genre_text_2000 = genre_text_2000.replace("[", "").replace("]", "").replace("'", "").replace(",", "")
 print(genre_text_2000)
